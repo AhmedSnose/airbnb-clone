@@ -28,8 +28,9 @@ export default function Home({explorData , cardData}) {
 
          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
          {explorData?.map((data,i) => (
-            <SmailCard key={i} img={data.imageUrl} location={data.location} distance={data.distance}/>
+            <SmailCard key={i} img={data.img} location={data.location} distance={data.distance}/>
           ))}
+
          </div>
         </section>
 
@@ -58,7 +59,7 @@ export default function Home({explorData , cardData}) {
 }
 
 export async function getStaticProps(){
-  const explorData = await fetch('https://post-api-25a47-default-rtdb.firebaseio.com/0.json').then(
+  const explorData = await fetch('http://links.papareact.com/pyp').then(
     (res) => res.json()
   )
 
